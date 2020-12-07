@@ -1,0 +1,32 @@
+<h1>{{titulo}}</h1>
+
+<div *ngIf="usuarioSelecionado">
+  Usuário Selecionado: {{usuarioSelecionado}}
+</div>
+<Br>
+ <button class="btn btn-default" (click)="voltar()">Voltar</button>
+<div *ngIf="!usuarioSelecionado">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">E-Mail</th>
+        <th scope="col">Senha</th>
+        <th scope="col">Data de Nascimento</th>
+        <th scope="col">Sexo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios" style="cursor: pointer;" (click)="usuarioSelect(usuario)">
+        <th scope="row">{{usuario.id}}</th>
+        <td>{{usuario.nome}}</td>
+        <td>{{usuario.email}}</td>
+        <td>{{usuario.senha}}</td>
+        <td>{{usuario.datanascimento}}</td>
+        <td>{{usuario.sexo}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

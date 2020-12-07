@@ -1,0 +1,35 @@
+<h1>{{titulo  }}</h1>
+
+<div *ngIf="eventoSelecionado">
+  Evento Selecionado : {{eventoSelecionado}}
+</div>
+<Br>
+  <button class="btn btn-default" (click)="voltar()">Voltar</button>
+<div *ngIf="!eventoSelecionado">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Data do Evento</th>
+        <th scope="col">Local</th>
+        <th scope="col">Participante</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let elemento of eventos" style="cursor: pointer;" (click)="eventoSelect(elemento)">
+        <th scope="row">{{elemento.id}}</th>
+        <td>{{elemento.tipo}}</td>
+        <td>{{elemento.nome}}</td>
+        <td>{{elemento.descricao}}</td>
+        <td>{{elemento.dataevento}}</td>
+        <td>{{elemento.local}}</td>
+        <td>{{elemento.participante}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
